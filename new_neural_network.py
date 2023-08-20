@@ -25,7 +25,6 @@ class NeuralNetwork:
     def __init__(self, l_sizes):
         self.sizes = l_sizes
         self.layers = [Layer(l_sizes[i - 1], l_sizes[i]) for i in range(1, len(l_sizes))]
-        self.a = [np.zeros(shape=(size, 1)) for size in l_sizes]
         self.G = bp.Gradient(l_sizes)
         self.g_count = 0
         self.a = [np.zeros(shape=(size, 1)) for size in self.sizes]
